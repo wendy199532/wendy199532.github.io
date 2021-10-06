@@ -9,29 +9,34 @@
                 font-family: 微軟正黑體;
             }
             body,html{
-                width: 100%;
+                max-width: 100%;
                 height: 100%;
                 padding: 0;
                 margin: 0;
+                background-color: #990000;
             }
             header{
                 margin: 0px;
                 width: 100%;
                 position: fixed;
-                background-color: #ec1d25;
+                background-color: #fff;
                 box-shadow: 0 0 10px;
                 z-index: 20;
                 top: 0;
             }
+            footer{
+                background-color: rgb(240, 240, 240);
+                width: 100%;
+            }
             .menu>li>a{
-                color: white;
+                color: black;
                 text-decoration: none;
                 font-size: 18px;
                 transition: 0.5s;
             }
             .menu>li>a:hover{
-                background-color: #fff;
-                color: black;
+                background-color: #c00a1a;
+                color: #fff;
 
             }
             .top{
@@ -40,7 +45,7 @@
                 padding: 0;
                 margin: 0;
                 width: 100%;
-                height: 100px;
+                height: 70px;
                 justify-content: center;
                 align-items: center;
             }
@@ -57,7 +62,7 @@
                 margin: 10px;
             }
             .tool>li>a>img{
-                filter: invert(100%)
+                /* filter: invert(100%) */
             }
             .logo{
             }
@@ -82,12 +87,11 @@
             .footer{
                 display: flex;
                 justify-content: center;
-                background-color: rgb(240, 240, 240);
             }
             .linklist{
                 flex: 0 0 30%;
                 padding: 10px;
-                margin: 10px;
+                margin: 0px;
                 font-size: 12px;
                 color: rgb(104, 104, 104);
                 max-width: 300px;
@@ -107,6 +111,38 @@
                 color: rgb(104, 104, 104);
                 margin: 0;
             }
+            #slider{
+                overflow: hidden;
+                width: 100%;
+            }
+            #slider figure{
+                position: relative;
+                width: 200%;
+                margin: 0;
+                left: 0;
+                animation: 10s slider infinite;
+            }
+            #slider figure img{
+                width: 50%;
+                float: left;
+            }
+            @keyframes slider {
+                0% {
+                    left: 0;
+                }
+                40% {
+                    left: 0;
+                }
+                50% {
+                    left: -100%;
+                }
+                90% {
+                    left: -100%;
+                }
+                100% {
+                    left: 0;
+                }
+            }
         </style>
         <script type="text/javascript">
         
@@ -116,7 +152,7 @@
     <body>
         <header>
             <div class="top">
-                <div class="logo"><img src="img/logo2.jpg" alt="" width="170px"></div>
+                <div class="logo"><a href="index.html"><img src="img/logo3.gif" alt="" width="120px"></a></div>
                 <ul class="tool">
                     <li><a href=""><img src="img/user.png" alt="" width="30px"></a></li>
                     <li><a href=""><img src="img/shopping-cart.png" alt="" width="30px"></a></li>
@@ -124,15 +160,22 @@
                 </ul>
             </div>
             <ul class="menu">
-                <li><a href="pocky.html">首頁</a></li>
+                <li><a href="index.html">首頁</a></li>
                 <li><a href="">熱銷排行榜</a></li>
-                <li><a href="">限時優惠</a></li>
-                <li><a href="">商品總覽</a></li>
+                <li><a href="sale.html">限時優惠</a></li>
+                <li><a href="shopping.html">商品總覽</a></li>
                 <li><a href="know.html">認識Pocky</a></li>
             </ul>
         </header>
-        <div class="none" style="height: 150px;"></div>
-        <img src="img/封面1.jpg" alt="" width="100%">
+        <div class="none" style="height: 110px;"></div>
+        <div class="cm">
+            <div id="slider">
+                <figure>
+                    <img src="img/巧克力/杏仁巧克力.gif" >
+                    <img src="img/草莓/草莓果肉巧克力棒.gif" >
+                </figure>
+            </div>
+        </div>
         <footer>
             <div class="footer">
                 <div class="linklist">

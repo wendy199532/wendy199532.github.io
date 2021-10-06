@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Pocky Practice</title>
+        <style type="text/css">
+            *{
+                /* border: 1px solid black; */
+                font-family: 微軟正黑體;
+            }
+            body,html{
+                width: 100%;
+                height: 100%;
+                padding: 0;
+                margin: 0;
+                background-color: #990000;
+            }
+            header{
+                margin: 0px;
+                width: 100%;
+                position: fixed;
+                background-color: #fff;
+                box-shadow: 0 0 10px;
+                z-index: 20;
+                top: 0;
+            }
+            footer{
+                background-color: rgb(240, 240, 240);
+            }
+            .menu>li>a{
+                color: black;
+                text-decoration: none;
+                font-size: 18px;
+                transition: 0.5s;
+            }
+            .menu>li>a:hover{
+                background-color: #c00a1a;
+                color: #fff;
+
+            }
+            .top{
+                display: flex;
+                position: relative;
+                padding: 0;
+                margin: 0;
+                width: 100%;
+                height: 70px;
+                justify-content: center;
+                align-items: center;
+            }
+            .tool{
+                display: flex;
+                position: absolute;
+                padding: 0px;
+                margin: 0px;
+                right: 0px;
+                top: 0px;
+            }
+            .tool>li{ 
+                list-style: none;
+                margin: 10px;
+            }
+            .tool>li>a>img{
+                /* filter: invert(100%) */
+            }
+            .logo{
+            }
+            .menu{
+                display: flex;
+                list-style: none;
+                justify-content: center;
+                align-items: center;
+                letter-spacing: 1px;
+                padding: 0;
+                margin: 0;
+                margin-top: 10px;
+            }
+            .menu>li{
+                padding: 5px 5px;
+                margin: 0px;
+                margin-bottom: 5px;
+            }
+            .menu>li>a{
+                padding: 10px 15px;
+            }
+            .footer{
+                display: flex;
+                justify-content: center;
+            }
+            .linklist{
+                flex: 0 0 30%;
+                padding: 10px;
+                margin: 0px;
+                font-size: 12px;
+                color: rgb(104, 104, 104);
+                max-width: 300px;
+            }
+            .linklist>ul>li{
+                /* list-style: none; */
+                letter-spacing: 1px;
+                line-height: 20px;
+                
+            }
+            .nt{
+                text-align: center;
+                padding: 30px;
+                font-size: 18px;
+                font-weight: 200;
+                letter-spacing: 1px;
+                color: rgb(104, 104, 104);
+                margin: 0;
+            }
+        </style>
+        <script type="text/javascript">
+        
+        </script>
+        
+    </head>
+    <body>
+        <header>
+            <div class="top">
+                <div class="logo"><a href="index.html"><img src="img/logo3.gif" alt="" width="120px"></a></div>
+                <ul class="tool">
+                    <li><a href=""><img src="img/user.png" alt="" width="30px"></a></li>
+                    <li><a href=""><img src="img/shopping-cart.png" alt="" width="30px"></a></li>
+                    <li><a href=""><img src="img/searching.png" alt="" width="30px"></a></li>
+                </ul>
+            </div>
+            <ul class="menu">
+                <li><a href="index.html">首頁</a></li>
+                <li><a href="">熱銷排行榜</a></li>
+                <li><a href="sale.html">限時優惠</a></li>
+                <li><a href="shopping.html">商品總覽</a></li>
+                <li><a href="know.html">認識Pocky</a></li>
+            </ul>
+        </header>
+        <div class="none" style="height: 120px;"></div>
+        
+        <footer>
+            <div class="footer">
+                <div class="linklist">
+                    <hr>
+                    <h5>關於我們</h5>
+                    <ul>
+                        <li>電話:(02)1234-5678</li>
+                        <li>信箱:pocky@email.com</li>
+                        <li>10:00 ~ 18:00 (午休時間 12:30-13:30/例假日除外)</li>
+                    </ul>
+                </div>
+                <div class="linklist">
+                    <hr>
+                    <h5>訂購問題</h5>
+                    <ul>
+                        <li>訂購說明與配送方式</li>
+                        
+                        <li>服務條款</li>
+                        <li>隱私權政策</li>
+                        <li>退款注意事項</li>
+                    </ul>
+                </div>
+                <div class="linklist">
+                    <hr>
+                    <h5>其他資訊</h5>
+                    <ul>
+                        <li>食品業登錄字號：A-123456789-00000-0</li>
+                        <li>食品字號登錄業者：百奇台灣股份有限公司</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="nt">
+                <hr>
+                <h5>個人練習作品，無商業用途 | 參考網站：<a href="https://www.glicoshop.com/" target="_blank">glico格力高</a></h5>
+            </div>
+        </footer>
+
+    </body>
+</html>

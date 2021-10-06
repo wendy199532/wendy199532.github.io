@@ -13,25 +13,30 @@
                 height: 100%;
                 padding: 0;
                 margin: 0;
+                background-color: #990000;
             }
             header{
                 margin: 0px;
                 width: 100%;
                 position: fixed;
-                background-color: #ec1d25;
+                background-color: #fff;
                 box-shadow: 0 0 10px;
                 z-index: 20;
                 top: 0;
             }
+            footer{
+                background-color: rgb(240, 240, 240);
+                width: 100%;
+            }
             .menu>li>a{
-                color: white;
+                color: black;
                 text-decoration: none;
                 font-size: 18px;
                 transition: 0.5s;
             }
             .menu>li>a:hover{
-                background-color: #fff;
-                color: black;
+                background-color: #c00a1a;
+                color: #fff;
 
             }
             .top{
@@ -40,7 +45,7 @@
                 padding: 0;
                 margin: 0;
                 width: 100%;
-                height: 100px;
+                height: 70px;
                 justify-content: center;
                 align-items: center;
             }
@@ -57,7 +62,7 @@
                 margin: 10px;
             }
             .tool>li>a>img{
-                filter: invert(100%)
+                /* filter: invert(100%) */
             }
             .logo{
             }
@@ -79,19 +84,14 @@
             .menu>li>a{
                 padding: 10px 15px;
             }
-            .know>img{
-                width: 100%;
-                margin-bottom: 150px;
-            }
             .footer{
                 display: flex;
                 justify-content: center;
-                background-color: rgb(240, 240, 240);
             }
             .linklist{
                 flex: 0 0 30%;
                 padding: 10px;
-                margin: 10px;
+                margin: 0px;
                 font-size: 12px;
                 color: rgb(104, 104, 104);
                 max-width: 300px;
@@ -111,6 +111,98 @@
                 color: rgb(104, 104, 104);
                 margin: 0;
             }
+            .history{
+                overflow: hidden;
+                cursor: default;
+                transition: 0.5s;
+            }
+            .item>img:hover{
+                transform:scale(1.1)
+            }
+            .item{
+                color: #fff;
+                padding: 40px;
+                margin: 0;
+                width: 100%;
+                letter-spacing: 1px;
+                font-weight: 100;
+                font-size: 18px;
+                line-height: 30px;
+                text-shadow: 0 0 10px black;
+                transition: 0.5s;
+            }
+            .item:nth-child(odd){
+                background-color: #c00a1a;
+            }
+            .itemtxt_right{
+                float: left;
+                margin: 0;
+                padding-left: 8%;
+                padding-top: 4%;
+            }
+            .itemtxt_left{
+                float: right;
+                margin: 0;
+                padding-right: 15%;
+                padding-top: 3%;
+            }
+            .itemtxt{
+                background-image: url(img/封面7-1.jpg);
+                color: rgb(240, 240, 240);
+                width: 100%;
+                height: 400px;
+                margin: 0;
+                padding: 0;
+                background-size: cover;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                font-size: 30px;
+            }
+            .itemtxt>h1,h3{
+                padding: 0px;
+                margin: 5px;
+                letter-spacing: 3px;
+                text-shadow: 0 0 10px black;
+                transition: 0.5s;
+            }
+            .itemtxt>h1:hover{
+                text-shadow: 10px 10px 20px black;
+            }
+            .itemtxt>h3:hover{
+                text-shadow: 10px 10px 20px black;
+            }
+            #hand{
+                padding-left: 10%;
+                transition: 0.5s;
+            }
+            #broke{
+                padding-left: 10%;
+                transition: 0.5s;
+            }
+            #burn{
+                padding-left: 5%;
+                transition: 0.5s;
+            }
+            #world{
+                padding-top: 1%;
+                padding-bottom: 3%;
+                padding-left: 6%;
+                margin-right: 10px;
+            }
+            #wd{
+                transition: 0.5s;
+            }
+            .change{
+                display: inline-block;
+                vertical-align: middle;
+                text-align: center;
+                padding-left: 17%;
+            }
+            #tip{
+                font-size: 10px;
+            }
         </style>
         <script type="text/javascript">
         
@@ -120,7 +212,7 @@
     <body>
         <header>
             <div class="top">
-                <div class="logo"><img src="img/logo2.jpg" alt="" width="170px"></div>
+                <div class="logo"><a href="index.html"><img src="img/logo3.gif" alt="" width="120px"></a></div>
                 <ul class="tool">
                     <li><a href=""><img src="img/user.png" alt="" width="30px"></a></li>
                     <li><a href=""><img src="img/shopping-cart.png" alt="" width="30px"></a></li>
@@ -128,17 +220,67 @@
                 </ul>
             </div>
             <ul class="menu">
-                <li><a href="pocky.html">首頁</a></li>
+                <li><a href="index.html">首頁</a></li>
                 <li><a href="">熱銷排行榜</a></li>
-                <li><a href="">限時優惠</a></li>
-                <li><a href="">商品總覽</a></li>
+                <li><a href="sale.html">限時優惠</a></li>
+                <li><a href="shopping.html">商品總覽</a></li>
                 <li><a href="know.html">認識Pocky</a></li>
             </ul>
         </header>
-        <div class="none" style="height: 100px;"></div>
-        <div class="know">
-            <img src="img/know.jpg" alt="">
-            
+        <div class="none" style="height: 120px;"></div>
+        <div class="history">
+            <div class="itemtxt">  
+                <h1>POCKY'S HISTORY</h1>
+                <h3>Pocky的歷史</h3>
+            </div>
+            <div class="item">
+                <div class="itemtxt_right">
+                    <h1>1996-Pocky誕生</h1>
+                    <p>江崎格力高於1966年推出了百奇巧克力，
+                        稱其為"世界上第一款棒狀巧克力糖果"。</p>
+                </div>
+                <img id="burn" src="img/16_history_img01.jpg" alt="">
+            </div>
+            <div class="item">
+                <div class="itemtxt_left">
+                    <h1>手拿的方式</h1>
+                    <p>經過反復實驗和試錯，發現將巧克力塗抹在棒狀餅乾上的一部分，
+                        <br>這簡單創新的想法帶來了一種新的享受甜食的方式。
+                        <br>帶有"手柄"的餅乾。</p>
+                </div>
+                <img id="hand" src="img/hand.jpg" alt="">
+            </div>
+            <div class="item">
+                <div class="itemtxt_right">
+                    <h1>咬下的聲音</h1>
+                    <p>Pocky的產品名稱的靈感來自日本人在食用時聽到的擬聲詞"pokin、pokin"。</p>
+                </div>
+                <img id="broke" src="img/sound.jpg" alt="">
+            </div>
+            <div class="item">
+                <div class="change">
+                    <div class="item-txt">
+                        <h1>Pocky的變化</h1>
+                        <p>自1966年首次亮相以來，百奇一直在不斷發展。</p>
+                    </div>
+                    <img src="img/history.jpg" alt="" style="max-width: 90%;">
+                </div>
+            </div>
+            <div class="item">
+                <div id="world" class="itemtxt_right">
+                    <h1>Pocky受全世界歡迎</h1>
+                    <ul>
+                        <li>1970年成立Thai Glyco</li>
+                        <li>1982年成立General Biscuit Glico France
+                            百奇以流行遊戲名稱"Mikado"的品牌名稱出售。</li>
+                        <li>1995年成立上海格力高。</li>
+                        <li>獲得吉尼斯世界紀錄™認證，2020年全球銷量第一*
+                            <p id="tip">*最大的巧克力塗層餅乾品牌/2019年全球銷售額預估5.899億美元（根據國際市場研究數據）</p>
+                        </li>
+                    </ul>
+                </div>
+                <img id="wd" src="img/world.jpg" alt="">
+            </div>
         </div>
         <footer>
             <div class="footer">
@@ -176,5 +318,6 @@
                 <h5>個人練習作品，無商業用途 | 參考網站：<a href="https://www.glicoshop.com/" target="_blank">glico格力高</a></h5>
             </div>
         </footer>
+
     </body>
 </html>
