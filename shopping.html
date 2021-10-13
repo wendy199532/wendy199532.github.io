@@ -14,6 +14,9 @@
                 padding: 0;
                 margin: 0;
                 background-color: #990000;
+                background-image: url(img/封面6.jpg);
+                background-size: cover;
+                background-attachment: fixed;
             }
             header{
                 margin: 0px;
@@ -60,11 +63,6 @@
                 list-style: none;
                 margin: 10px;
             }
-            .tool>li>a>img{
-                /* filter: invert(100%) */
-            }
-            .logo{
-            }
             .menu{
                 display: flex;
                 list-style: none;
@@ -110,11 +108,88 @@
                 color: rgb(104, 104, 104);
                 margin: 0;
             }
+            
+            .products{
+                width: 80%;
+                margin: auto;
+                margin-bottom: 100px;
+            }
+            .products>h1{
+                display: table;
+                margin: auto;
+                padding: 40px;
+                color: white;
+                text-shadow: 0 0 10px black;
+            }
+            .productsList{
+                width: 90%;
+                display: flex;
+                flex-wrap: wrap;
+                list-style: none;
+                justify-content: center;
+                text-align: center;
+                padding: 0;
+                margin: auto;
+            }
+            .onsale{
+                background-size: contain;
+                background-repeat: no-repeat;
+                height: 75px;
+                position: absolute;
+                top: -12px;
+                left: -12px;
+                width: 75px;
+                z-index: 1;
+            }
+            .data{
+                position: relative;
+                width: 25%;
+                height: 35%;
+                text-align: center;
+                vertical-align: top;
+                padding: 10px;
+                margin: 20px;
+                background-color: #fff;
+                border-radius: 5px;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.603);
+                transition: 0.3s;
+                cursor: pointer;
+                font-weight: lighter;
+            }
+            .data:hover{
+                box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.589);
+            }
+            li.data>a{
+                text-decoration:none;
+                color: black;
+            }
+            li.data>a>img{
+                width: 90%;
+            }
+            .name{
+                margin: 10px;
+            }
+            .price{
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                align-items: center;
+                margin: 0;
+                padding: 0;
+            }
+            .nodiscount{
+                margin: 0;
+                margin-right: 10px;
+                opacity: 0.6;
+                font-size: 15px;
+            }
+            .discount{
+                margin: 0;
+                color: red;
+                font-size: 20px;
+                font-weight: bold;
+            }
         </style>
-        <script type="text/javascript">
-        
-        </script>
-        
     </head>
     <body>
         <header>
@@ -128,14 +203,17 @@
             </div>
             <ul class="menu">
                 <li><a href="index.html">首頁</a></li>
-                <li><a href="">熱銷排行榜</a></li>
                 <li><a href="sale.html">限時優惠</a></li>
                 <li><a href="shopping.html">商品總覽</a></li>
                 <li><a href="know.html">認識Pocky</a></li>
             </ul>
         </header>
         <div class="none" style="height: 120px;"></div>
-        
+        <div class="products">
+            <h1>商品總覽</h1>
+            <ul class="productsList">
+            </ul>
+        </div>
         <footer>
             <div class="footer">
                 <div class="linklist">
@@ -173,5 +251,91 @@
             </div>
         </footer>
 
+    <script src="js/jquery.min.js"></script>
+    <script type="text/javascript">
+        console.clear()
+        var datas = [
+            {
+                name: "Pocky杏仁粒粒巧克力棒",
+                price: 79,
+                discount: 0.89,
+                img:"<img src='img/杏仁粒粒巧克力棒/杏仁粒粒巧克力棒.jpg'>",
+                html:""
+            },
+
+            {
+                name:"Pocky草莓粒粒巧克力棒",
+                price:79,
+                discount:0.89,
+                img:"<img src='img/草莓粒粒巧克力棒/草莓粒粒巧克力棒.jpg'>",
+                html:""
+            },
+
+            {
+                name:"Pocky極細巧克力棒",
+                price:79,
+                discount:0.89,
+                img:"<img src='img/極細巧克力棒.jpg'>",
+                html:""
+            },
+
+            {
+                name:"Pocky牛奶餅乾巧克力棒",
+                price:38,
+                discount:0.87,
+                img:"<img src='img/牛奶餅乾巧克力棒.jpg'>",
+                html:""
+            },
+
+            {
+                name:"Pocky巧克力棒(40g)",
+                price:38,
+                discount:0.87,
+                img:"<img src='img/巧克力棒.jpg'>",
+                html:""
+            },
+
+            {
+                name:"Pocky草莓棒(40g)",
+                price:38,
+                discount:0.87,
+                img:"<img src='img/草莓棒.jpg'>",
+                html:""
+            },
+
+            {
+                name:"Pocky抹茶棒(39g)",
+                price:38,
+                discount:0.87,
+                img:"<img src='img/百琪抹茶棒.jpg'>",
+                html:""
+            },
+
+            {
+                name:"Pocky巧克力棒（9入）",
+                price:189,
+                discount:0.88,
+                img:"<img src='img/巧克力棒（9袋入）.jpg'>",
+                html:""
+            },
+
+            {
+                name:"Pocky草莓棒（9入）",
+                price:189,
+                discount:0.88,
+                img:"<img src='img/草莓棒（9袋入）.jpg'>",
+                html:""
+            },
+        ]
+
+        for(var i=0;i<datas.length;i++){
+            var data = datas[i]
+            $("ul.productsList").append("<li class='data'><div class='onsale' style='background-image: url(img/sale.png)'></div><a href='"+data.html+"'>"+data.img+"<h4 class='name'>"+data.name+
+                "</h4><div class='price'><h5 class='nodiscount'>NT$"+data.price+
+                "</h5><h4 class='discount'>NT$"+parseInt(data.price*data.discount)+
+                "</h4></div></a></li>")
+        }
+        
+    </script>
     </body>
 </html>
