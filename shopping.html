@@ -13,8 +13,7 @@
                 height: 100%;
                 padding: 0;
                 margin: 0;
-                background-color: #990000;
-                background-image: url(img/封面6.jpg);
+                background-image: url(img/red.jpg);
                 background-size: cover;
                 background-attachment: fixed;
             }
@@ -84,6 +83,7 @@
             .footer{
                 display: flex;
                 justify-content: center;
+                padding-top: 40px;
             }
             .linklist{
                 flex: 0 0 30%;
@@ -114,12 +114,25 @@
                 margin: auto;
                 margin-bottom: 100px;
             }
-            .products>h1{
-                display: table;
-                margin: auto;
-                padding: 40px;
+            .productstitle{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                position: relative;
+                margin: 33px;
+            }
+            .toptitle{
+                /* display: table; */
+                font-size: 35px;
                 color: white;
                 text-shadow: 0 0 10px black;
+            }
+            .select{
+                font-size: 20px;
+                position: absolute;
+                right: 0px;
+                bottom: 0;
+                border-radius: 3px;
             }
             .productsList{
                 width: 90%;
@@ -210,7 +223,14 @@
         </header>
         <div class="none" style="height: 120px;"></div>
         <div class="products">
-            <h1>商品總覽</h1>
+            <div class="productstitle">
+                <div class="toptitle">商品總覽</div>
+                <select id="select" class="select">
+                    <option value="1">預設排序</option>
+                    <option value="2">價格由高到低</option>
+                    <option value="3">價格由低到高</option>
+                </select>
+            </div>
             <ul class="productsList">
             </ul>
         </div>
@@ -260,7 +280,9 @@
                 price: 79,
                 discount: 0.89,
                 img:"<img src='img/杏仁粒粒巧克力棒/杏仁粒粒巧克力棒.jpg'>",
-                html:""
+                html:"almond_crush.html",
+                num:1
+
             },
 
             {
@@ -268,7 +290,8 @@
                 price:79,
                 discount:0.89,
                 img:"<img src='img/草莓粒粒巧克力棒/草莓粒粒巧克力棒.jpg'>",
-                html:""
+                html:"",
+                num:2
             },
 
             {
@@ -276,7 +299,8 @@
                 price:79,
                 discount:0.89,
                 img:"<img src='img/極細巧克力棒.jpg'>",
-                html:""
+                html:"",
+                num:3
             },
 
             {
@@ -284,7 +308,8 @@
                 price:38,
                 discount:0.87,
                 img:"<img src='img/牛奶餅乾巧克力棒.jpg'>",
-                html:""
+                html:"",
+                num:4
             },
 
             {
@@ -292,7 +317,8 @@
                 price:38,
                 discount:0.87,
                 img:"<img src='img/巧克力棒.jpg'>",
-                html:""
+                html:"",
+                num:5
             },
 
             {
@@ -300,7 +326,8 @@
                 price:38,
                 discount:0.87,
                 img:"<img src='img/草莓棒.jpg'>",
-                html:""
+                html:"",
+                num:6
             },
 
             {
@@ -308,7 +335,17 @@
                 price:38,
                 discount:0.87,
                 img:"<img src='img/百琪抹茶棒.jpg'>",
-                html:""
+                html:"",
+                num:7
+            },
+
+            {
+                name:"Pocky奢華牛奶巧克力棒",
+                price:189,
+                discount:0.95,
+                img:"<img src='img/奢華牛奶巧克力棒/奢華.jpg'>",
+                html:"",
+                num:8
             },
 
             {
@@ -316,7 +353,8 @@
                 price:189,
                 discount:0.88,
                 img:"<img src='img/巧克力棒（9袋入）.jpg'>",
-                html:""
+                html:"",
+                num:9
             },
 
             {
@@ -324,18 +362,86 @@
                 price:189,
                 discount:0.88,
                 img:"<img src='img/草莓棒（9袋入）.jpg'>",
-                html:""
+                html:"",
+                num:10
+            },
+
+            {
+                name:"Pocky杏仁粒粒巧克力棒禮盒（4盒入）",
+                price:316,
+                discount:0.82,
+                img:"<img src='img/四盒/巧克力四盒.jpg'>",
+                html:"",
+                num:11
+            },
+
+            {
+                name:"Pocky草莓粒粒巧克力棒禮盒（4盒入）",
+                price:316,
+                discount:0.82,
+                img:"<img src='img/四盒/草莓四盒.jpg'>",
+                html:"",
+                num:12
             },
         ]
 
         for(var i=0;i<datas.length;i++){
             var data = datas[i]
             $("ul.productsList").append("<li class='data'><div class='onsale' style='background-image: url(img/sale.png)'></div><a href='"+data.html+"'>"+data.img+"<h4 class='name'>"+data.name+
-                "</h4><div class='price'><h5 class='nodiscount'>NT$"+data.price+
-                "</h5><h4 class='discount'>NT$"+parseInt(data.price*data.discount)+
+                "</h4><div class='price'><del class='nodiscount'>NT$"+data.price+
+                "</del><h4 class='discount'>NT$"+parseInt(data.price*data.discount)+
                 "</h4></div></a></li>")
         }
         
+        datas.sort(function(a,b){
+            return a.price-b.price
+        })
+
+        $("#select").change(
+            function(){
+                if($("#select").val()=="2"){
+                    datas.sort(function(a,b){
+                        return b.price-a.price
+                    })
+                    $("ul.productsList").empty();
+                    initHtml()
+                }else if($("#select").val()=="3"){
+                    datas.sort(function(a,b){
+                        return a.price-b.price
+                    })
+                    $("ul.productsList").empty();
+                    initHtml()
+                }else if($("#select").val()=="1"){
+                    datas.sort(function(a,b){
+                        return a.num-b.num
+                    })
+                    $("ul.productsList").empty();
+                    initHtml()
+                }
+            }
+        )
+
+        function initHtml(){
+            var str = "";
+            datas.forEach(function(data){
+                var money = parseInt(data.price*data.discount)
+                str = `
+                <li class='data'>
+                    <div class='onsale' style='background-image: url(img/sale.png)'></div>
+                    <a href='${data.html}'>
+                        ${data.img}
+                        <h4 class='name'>${data.name}</h4>
+                        <div class='price'>
+                            <del class='nodiscount'>NT$${data.price}</del>
+                            <h4 class='discount'>NT$${money}</h4>
+                        </div>
+                    </a>
+                </li>
+                `;
+                
+                $("ul.productsList").append(str);
+            })
+        }
     </script>
     </body>
 </html>

@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Pocky Practice</title>
+        <style type="text/css">
+            *{
+                /* border: 1px solid black; */
+                font-family: 微軟正黑體;
+            }
+            body,html{
+                max-width: 100%;
+                height: 100%;
+                padding: 0;
+                margin: 0;
+                background-color: #fff;
+                background-image: url(img/red.jpg);
+                background-size: cover;
+            }
+            header{
+                margin: 0px;
+                width: 100%;
+                position: fixed;
+                background-color: #fff;
+                box-shadow: 0 0 10px;
+                z-index: 20;
+                top: 0;
+            }
+            footer{
+                background-color: rgb(240, 240, 240);
+                width: 100%;
+            }
+            .menu>li>a{
+                color: black;
+                text-decoration: none;
+                font-size: 18px;
+                transition: 0.5s;
+            }
+            .menu>li>a:hover{
+                background-color: #c00a1a;
+                color: #fff;
+
+            }
+            .top{
+                display: flex;
+                position: relative;
+                padding: 0;
+                margin: 0;
+                width: 100%;
+                height: 70px;
+                justify-content: center;
+                align-items: center;
+            }
+            .tool{
+                display: flex;
+                position: absolute;
+                padding: 0px;
+                margin: 0px;
+                right: 0px;
+                top: 0px;
+            }
+            .tool>li{ 
+                list-style: none;
+                margin: 10px;
+            }
+            .menu{
+                display: flex;
+                list-style: none;
+                justify-content: center;
+                align-items: center;
+                letter-spacing: 1px;
+                padding: 0;
+                margin: 0;
+                margin-top: 10px;
+            }
+            .menu>li{
+                padding: 5px 5px;
+                margin: 0px;
+                margin-bottom: 5px;
+            }
+            .menu>li>a{
+                padding: 10px 15px;
+            }
+            .footer{
+                display: flex;
+                justify-content: center;
+                padding-top: 40px;
+            }
+            .linklist{
+                flex: 0 0 30%;
+                padding: 10px;
+                margin: 0px;
+                font-size: 12px;
+                color: rgb(104, 104, 104);
+                max-width: 300px;
+            }
+            .linklist>ul>li{
+                /* list-style: none; */
+                letter-spacing: 1px;
+                line-height: 20px;
+                
+            }
+            .nt{
+                text-align: center;
+                padding: 30px;
+                font-size: 18px;
+                font-weight: 200;
+                letter-spacing: 1px;
+                color: rgb(104, 104, 104);
+                margin: 0;
+            }
+            .container{
+                display: flex;
+                flex-direction: column;
+                margin: auto;
+            }
+            .product_info{
+                width: 75%;
+                height: 100%;
+                background-color: rgb(255, 255, 255);
+                display: flex;
+                justify-content: center;
+                margin: auto;
+                padding: 50px;
+            }
+            .product_content{
+                padding: 30px;
+                padding-top: 10px;
+                border-left: 1px solid rgba(0, 0, 0, 0.26);
+            }
+            .product_title>h1{
+                margin: 0;
+                font-size: 35px;
+            }
+            .brife{
+                font-size: 15px;
+                color: rgba(0, 0, 0, 0.705);
+            }
+            .slogan{
+                font-size: 18px;
+            }
+            .price_flex{
+                display: flex;
+                align-items:flex-end;
+                margin-bottom: 20px;
+            }
+            .product_price{
+                margin-top: 100px;
+            }
+            .product_price>p{
+                margin: 0;
+            }
+            .price{
+                color: red;
+                font-size: 30px;
+                margin-right: 10px;
+                font-weight: bold;
+            }
+            .product_quantity{
+                display: inline-block;
+                position: relative;
+                border: 1px solid #000;
+            }
+            .product_quantity>btn{
+                flex: 1 1 auto;
+            }
+            .quantity{
+                text-align: center;
+                vertical-align: middle;
+                width: 150px;
+                height: 25px;
+                font-size: 20px;
+                line-height: 1.5px;
+                padding: 7px;
+                border-radius: 0px;
+                border-top: 0px;
+                border-bottom: 0px;
+                border-right: 1px solid black;
+                border-left: 1px solid black;
+                outline: none;
+            }
+            .add{
+                cursor: pointer;
+            }
+            .down,.up,.add{
+                position: relative;
+                padding-left: 20px;
+                padding-right: 20px;
+                padding-top: 5px;
+                padding-bottom: 10px;
+            }
+            .down::before{
+                content: "";
+                position: absolute;
+                right: 10px;
+                top: 20px;
+                width: 19px;
+                height: 1px;
+                border-top: 1px solid #000;
+                box-sizing: border-box;
+            }
+            .up::before{
+                content: "";
+                position: absolute;
+                right: 12px;
+                top: 20px;
+                width: 19px;
+                height: 1px;
+                border-top: 1px solid #000;
+                box-sizing: border-box;
+            }
+            .up::after{
+                content: "";
+                position: absolute;
+                right: 21px;
+                top: 12px;
+                width: 1px;
+                height: 19px;
+                border-right: 1px solid #000;
+                box-sizing: border-box;
+            }
+            .porducy_buy{
+                margin-top: 20px;
+                display: flex;
+            }
+            .buy{
+                padding: 7px 35px;
+                margin-right: 15px;
+                font-size: 23px;
+                cursor: pointer;
+                border-radius: 3px;
+                transition: 0.2s;
+            }
+            .cart{
+                background-color: #fff;
+                border: 1px solid #000;
+            }
+            .cart:hover{
+                background-color: #c00a1a;
+                color: #fff;
+            }
+            .buynow{
+                background-color: #fff;
+                color: black;
+                border: 1px solid #000;
+            }
+            .buynow:hover{
+                background-color: #cfcfcf;
+            }
+            .product_description{
+                width: 75%;
+                height: 100%;
+                background-color: rgb(255, 255, 255);
+                margin: auto;
+                padding: 50px;
+                padding-top: 0px;
+            }
+            .desc_section{
+                width: 100%;
+                background-color: rgb(255, 255, 255);
+                padding: 0px;
+                border: 1px solid rgba(0, 0, 0, 0.144);
+            }
+            .section>li:hover{
+                background-color: rgba(187, 187, 187, 0.582);
+            }
+            .section{
+                display: flex;
+                list-style: none;
+                padding: 0px;
+                margin: 0px;
+            }
+            .section>li{
+                flex: 1;
+                text-align: center;
+                padding: 5px;
+                cursor: pointer;
+            }
+            .desc_1>p{
+                margin: 0;
+                padding: 0;
+            }
+            .desc_1>p>img{
+                width: 100%;
+            }
+            .before{
+                margin-left: 15px;
+                position: relative;
+            }
+            .before::before{
+                content: "";
+                width: 3px;
+                height: 35px;
+                position: absolute;
+                background-color: black;
+                left: -15px;
+                top: 4px;
+            }
+            ol{
+                letter-spacing: 1px;
+            }
+            .navFixed{
+                z-index: 11;
+                position: fixed;
+                top: 122px;
+                width: 75%;
+            }
+
+            input::-webkit-outer-spin-button,
+            input::-webkit-inner-spin-button {
+                -webkit-appearance: none;
+                margin: 0;
+            }
+            .backtop{
+                position: absolute;
+                width: 70px;
+                height: 70px;
+                border-radius: 50%;
+                background-color: rgba(255, 255, 255, 0.479);
+                position: fixed;
+                right: 25px;
+                bottom: 25px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.425);
+                cursor: pointer;
+            }
+            .backtop:hover{
+                background-color: #fff;
+            }
+        </style>
+        <script type="text/javascript">
+        
+        </script>
+        
+    </head>
+    <body>
+        <header>
+            <div class="top">
+                <div class="logo"><a href="index.html"><img src="img/logo3.gif" alt="" width="120px"></a></div>
+                <ul class="tool">
+                    <li><a href=""><img src="img/user.png" alt="" width="30px"></a></li>
+                    <li><a href=""><img src="img/shopping-cart.png" alt="" width="30px"></a></li>
+                    <li><a href=""><img src="img/searching.png" alt="" width="30px"></a></li>
+                </ul>
+            </div>
+            <ul class="menu">
+                <li><a href="index.html">首頁</a></li>
+                <li><a href="sale.html">限時優惠</a></li>
+                <li><a href="shopping.html">商品總覽</a></li>
+                <li><a href="know.html">認識Pocky</a></li>
+            </ul>
+        </header>
+        <div class="none" style="height: 110px;"></div>
+        <div class="container">
+            <div class="product_info">
+                <div class="product_img"><img src="img/杏仁粒粒巧克力棒/杏仁粒粒巧克力棒.jpg" style="width: 450px;"></div>
+                <div class="product_content">
+                    <div class="product_title">
+                        <h1>Pocky百奇 杏仁粒粒巧克力棒</h1>
+                    </div>
+                    <p class="brife">酥脆餅乾裹上香濃巧克力 巧克力香濃而不甜膩</p>
+                    <p class="slogan">美味不沾手 涮嘴愛不釋手</p>
+                    <div class="product_price">
+                        <p>優惠售價</p>
+                        <div class="price_flex">
+                            <div class="price">NT$70</div>
+                            <del style="font-size: 14px;">NT$79</del>
+                        </div>
+                    </div>
+                    <div class="product_quantity">
+                        <div class="quantity_btn">
+                            <span class="add down" onclick="minus()"></span>
+                            <input value="1" class="quantity" type="number">
+                            <span class="add up" onclick="add()"></span>
+                        </div>
+                    </div>
+                    <div class="porducy_buy">
+                        <button class="buy cart">加入購物車</button>
+                        <button class="buy buynow">立即購買</button>
+                    </div>
+                </div>
+            </div>
+            <div class="product_description">
+                <div class="desc_section">
+                    <ul class="section">
+                        <li id="a">商品介紹</li>
+                        <li id="b">規格說明</li>
+                        <li id="c">運送方式</li>
+                    </ul>
+                </div>
+                <div class="desc_body">
+                    <div class="desc_1">
+                        <h2 class="before">商品介紹</h2>
+                        <p>
+                            <img src="img/杏仁粒粒巧克力棒/content_835a5ed5-325e-4e99-8c5f-dc267009c90f.jpg" alt="">
+                        </p>
+                        <p>
+                            <img src="img/杏仁粒粒巧克力棒/content_f917a82b-37a7-4b70-8396-59854e57d9fe.jpg" alt="">
+                        </p>
+                        <p>
+                            <img src="img/杏仁粒粒巧克力棒/content_872be23f-975b-44a7-8149-2a43226a825f.jpg" alt="">
+                        </p>
+                        <p>
+                            <img src="img/杏仁粒粒巧克力棒/content_ce4e4e00-542c-4ca2-9ee8-732797b03677.jpg" alt="">
+                        </p>
+                        <p>
+                            <img src="img/杏仁粒粒巧克力棒/content_508c6cf1-ad1f-4304-a709-c56000ea5c3a.jpg" alt="">
+                        </p>
+                    </div>
+                    <div class="desc_2">
+                        <h2 class="before">規格說明</h2>
+                        <ol>
+                            <li>商品組合/規格：42.3g</li>
+                            <li>商品品名：Pocky百奇 杏仁粒粒巧克力棒42.3g</li>
+                            <li>商品重(容)量：杏仁粒粒巧克力棒42.3g</li>
+                            <li>內容物成分(如含有豬、牛成分請加註國別)：草小麥粉.砂糖.杏仁.全脂奶粉.植物油(棕櫚油).可可塊.可可脂.酥油(油菜籽油).食鹽.酵母.大豆卵磷脂.香料.天然食用色素(婀娜多).膨脹劑(碳酸氫鈉)。</li>
+                            <li>食品添加物名稱：無</li>
+                            <li>原產地(國)：日本埼玉縣</li>
+                            <li>製造廠商或國內負責廠商名稱：格力高台灣股份有限公司</li>
+                            <li>製造廠商或國內負責廠商地址：10351台北市大同區市民大道一段209號10樓G116</li>
+                            <li>製造廠商或國內負責廠商電話：02-21811626</li>
+                            <li>食品業者登錄字號：A-183474904-00000-7</li>
+                            <li>投保產品責任險字號：NC01600302</li>
+                        </ol>
+                    </div>
+                    <div class="desc_3">
+                        <h2 class="before">運送方式</h2>
+                        <ol>
+                            <li>超商取貨：7-11/全家/萊爾富 </li>
+                            <li>宅配：新竹物流</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="backtop"><img style="width:30px" src="img/up-arrow.png" alt=""></div>
+        <footer>
+            <div class="footer">
+                <div class="linklist">
+                    <hr>
+                    <h2>關於我們</h5>
+                    <ul>
+                        <li>電話:(02)1234-5678</li>
+                        <li>信箱:pocky@email.com</li>
+                        <li>10:00 ~ 18:00 (午休時間 12:30-13:30/例假日除外)</li>
+                    </ul>
+                </div>
+                <div class="linklist">
+                    <hr>
+                    <h5>訂購問題</h5>
+                    <ul>
+                        <li>訂購說明與配送方式</li>
+                        <li>服務條款</li>
+                        <li>隱私權政策</li>
+                        <li>退款注意事項</li>
+                    </ul>
+                </div>
+                <div class="linklist">
+                    <hr>
+                    <h5>其他資訊</h5>
+                    <ul>
+                        <li>食品業登錄字號：A-123456789-00000-0</li>
+                        <li>食品字號登錄業者：百奇台灣股份有限公司</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="nt">
+                <hr>
+                <h5>個人練習作品，無商業用途 | 參考網站：<a href="https://www.glicoshop.com/" target="_blank">glico格力高</a></h5>
+            </div>
+        </footer>
+
+
+        <script src="js/jquery.min.js"></script>
+        <script type="text/javascript">
+            console.clear()
+            $(window).scroll(
+                function(){
+                    if($(this).scrollTop()>500){
+                        $(".desc_section").addClass("navFixed")
+                        $("#backtop").addClass("backtop")
+                    }else{
+                        $(".desc_section").removeClass("navFixed")
+                        $("#backtop").removeClass("backtop")
+                    }
+                }
+            )
+            
+            $("li#a").click(function(){
+                window.scrollTo(0,530)
+            })
+            $("li#b").click(function(){
+                window.scrollTo(0,5300)
+            })
+            $("li#c").click(function(){
+                window.scrollTo(0,5710)
+            })
+
+            
+            var num = 1
+            $("input.quantity").val()
+            function add(){
+                if($("input.quantity").val()>=100){
+                    val=100
+                    return
+                }
+                var val = $("input.quantity").val()
+                val++
+                $("input.quantity").val(val)
+            }
+            function minus(){
+                if($("input.quantity").val()<=1){
+                    val=1
+                    return
+                }
+                var val = $("input.quantity").val()
+                val--
+                $("input.quantity").val(val)
+            }
+                
+
+            $("#backtop").click(
+                function backtop(){
+                window.scrollTo(0,0)
+            }
+            )
+            
+
+
+        </script>
+
+
+    </body>
+</html>
