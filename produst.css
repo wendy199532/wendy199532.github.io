@@ -1,0 +1,226 @@
+.container{
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+}
+.product_info{
+    width: 90%;
+    height: 100%;
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    padding: 0px;
+    padding-top: 30px;
+    padding-bottom: 20px;
+    min-width: 800px;
+}
+.product_content{
+    padding: 30px;
+    padding-top: 10px;
+    border-left: 1px solid rgba(0, 0, 0, 0.26);
+}
+.product_title>h1{
+    margin: 0;
+    font-size: 35px;
+}
+.brife{
+    font-size: 15px;
+    margin-top: 40px;
+    color: rgba(0, 0, 0, 0.705);
+}
+.slogan{
+    font-size: 18px;
+}
+.price_flex{
+    display: flex;
+    align-items:flex-end;
+    margin-bottom: 20px;
+}
+.product_price{
+    margin-top: 100px;
+}
+.product_price>p{
+    margin: 0;
+}
+.price{
+    color: red;
+    font-size: 30px;
+    margin-right: 10px;
+    font-weight: bold;
+}
+.product_quantity{
+    display: inline-block;
+    position: relative;
+    border: 1px solid #000;
+}
+.product_quantity>btn{
+    flex: 1 1 auto;
+}
+.quantity{
+    text-align: center;
+    vertical-align: middle;
+    width: 150px;
+    height: 35px;
+    font-size: 20px;
+    line-height: 1.5px;
+    padding: 7px;
+    border-radius: 0px;
+    border-top: 0px;
+    border-bottom: 0px;
+    border-right: 1px solid black;
+    border-left: 1px solid black;
+    outline: none;
+}
+.add{
+    cursor: pointer;
+}
+.down,.up,.add{
+    position: relative;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 5px;
+    padding-bottom: 10px;
+}
+.down::before{
+    content: "";
+    position: absolute;
+    right: 10px;
+    top: 20px;
+    width: 19px;
+    height: 1px;
+    border-top: 1px solid #000;
+    box-sizing: border-box;
+}
+.up::before{
+    content: "";
+    position: absolute;
+    right: 12px;
+    top: 20px;
+    width: 19px;
+    height: 1px;
+    border-top: 1px solid #000;
+    box-sizing: border-box;
+}
+.up::after{
+    content: "";
+    position: absolute;
+    right: 21px;
+    top: 12px;
+    width: 1px;
+    height: 19px;
+    border-right: 1px solid #000;
+    box-sizing: border-box;
+}
+.porduct_buy{
+    margin-top: 20px;
+    display: flex;
+}
+.buy{
+    padding: 7px 35px;
+    margin-right: 30px;
+    font-size: 23px;
+    cursor: pointer;
+    border-radius: 3px;
+    transition: 0.2s;
+}
+.cart{
+    background-color: #fff;
+    border: 1px solid #000;
+}
+.cart:hover{
+    background-color: #c00a1a;
+    color: #fff;
+}
+.buynow{
+    background-color: #fff;
+    color: black;
+    border: 1px solid #000;
+}
+.buynow:hover{
+    background-color: #cfcfcf3a;
+}
+.product_description{
+    width: 90%;
+    height: 100%;
+    background-color: rgb(255, 255, 255);
+    margin: auto;
+    padding: 50px;
+    padding-top: 0px;
+    min-width: 800px;
+}
+.desc_section{
+    width: 100%;
+    background-color: rgb(255, 255, 255);
+    padding: 0px;
+    border: 1px solid rgba(0, 0, 0, 0.144);
+}
+.section>li:hover{
+    background-color: rgba(187, 187, 187, 0.582);
+}
+.section{
+    display: flex;
+    list-style: none;
+    padding: 0px;
+    margin: 0px;
+}
+.section>li{
+    flex: 1;
+    text-align: center;
+    padding: 5px;
+    cursor: pointer;
+}
+.desc_1>p{
+    margin: 0;
+    padding: 0;
+}
+.desc_1>p>img{
+    width: 100%;
+}
+.before{
+    margin-left: 15px;
+    position: relative;
+}
+.before::before{
+    content: "";
+    width: 3px;
+    height: 35px;
+    position: absolute;
+    background-color: black;
+    left: -15px;
+    top: 4px;
+}
+ol{
+    letter-spacing: 1px;
+}
+.navFixed{
+    z-index: 11;
+    position: fixed;
+    top: 125px;
+    width: 67%;
+    min-width: 700px;
+}
+
+.quantity_btn>input::-webkit-outer-spin-button,
+.quantity_btn>input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+.backtop{
+    position: absolute;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.479);
+    position: fixed;
+    right: 25px;
+    bottom: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.425);
+    cursor: pointer;
+}
+.backtop:hover{
+    background-color: #fff;
+}

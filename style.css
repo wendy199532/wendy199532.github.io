@@ -1,0 +1,161 @@
+*{
+    font-family: 微軟正黑體;
+}
+body,html{
+    max-width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    background-color: #990000;
+}
+header{
+    margin: 0px;
+    width: 100%;
+    position: fixed;
+    background-color: #fff;
+    box-shadow: 0 0 10px;
+    z-index: 20;
+    top: 0;
+}
+footer{
+    background-color: rgb(240, 240, 240);
+    width: 100%;
+}
+.menu>li>a{
+    color: black;
+    text-decoration: none;
+    font-size: 18px;
+    transition: 0.5s;
+}
+.menu>li>a:hover{
+    background-color: #c00a1a;
+    color: #fff;
+
+}
+.top{
+    display: flex;
+    position: relative;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    height: 70px;
+    justify-content: center;
+    align-items: center;
+}
+.tool{
+    display: flex;
+    position: absolute;
+    padding: 0px;
+    margin: 0px;
+    right: 0px;
+    top: 0px;
+}
+.tool>li{ 
+    list-style: none;
+    margin: 10px;
+}
+.menu{
+    display: flex;
+    list-style: none;
+    justify-content: center;
+    align-items: center;
+    letter-spacing: 1px;
+    padding: 0;
+    margin: 0;
+    margin-top: 10px;
+}
+.menu>li{
+    padding: 5px 5px;
+    margin: 0px;
+    margin-bottom: 5px;
+}
+.menu>li>a{
+    padding: 10px 15px;
+}
+.footer{
+    display: flex;
+    justify-content: center;
+    padding-top: 40px;
+}
+.linklist{
+    flex: 0 0 30%;
+    padding: 10px;
+    margin: 0px;
+    font-size: 12px;
+    color: rgb(104, 104, 104);
+    max-width: 300px;
+}
+.linklist>h5{
+    font-size: 18px;
+}
+.linklist>ul>li{
+    letter-spacing: 1px;
+    line-height: 20px;
+    
+}
+.nt{
+    text-align: center;
+    padding: 30px;
+    font-size: 18px;
+    font-weight: 200;
+    letter-spacing: 1px;
+    color: rgb(104, 104, 104);
+    margin: 0;
+}
+.nt>h5{
+    font-size: 18px;
+}
+
+.cartitem{
+    display: flex;
+    margin: 40px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.192);
+}
+.cartitem>ul{
+    list-style: none;
+    padding-left: 20px;
+    line-height: 30px;
+    font-size: 16px;
+}
+.cartitem>ul>li>input{
+    width: 90px;
+    height: 25px;
+    text-align: center;
+    vertical-align: middle;
+    outline: none;
+}
+/* .dele{
+    position: relative;
+    width: 20px;
+    height: 20px;
+    right: -15px;
+    bottom: 120px;
+    background-color: #fff;
+} */
+.form-group{
+    padding: 10px;
+}
+.form-control{
+    border-radius: 25px;
+    width: 400px;
+    margin: auto;
+    margin-bottom: 25px;
+}
+.remember{
+    margin-left: 20px;
+    font-size: 15px;
+}
+.total{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin: 0;
+}
+.total>h5{
+    margin-top: 20px;
+    font-size: 20px;
+    margin-right: 10px;
+}
