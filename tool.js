@@ -50,7 +50,8 @@ $("#addporduct").click(
             localStorage.setItem("carts",JSON.stringify(newcarts))
             console.log(localStorage)
         }
-        quantity = $("input.quantity").val(1)
+        // quantity = $("input.quantity").val(1)
+        window.location.href="shopping.html"
     }
 )
 
